@@ -1,4 +1,4 @@
-package com.newsroom.employeers.demo;
+package com.newsroom.employeers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
