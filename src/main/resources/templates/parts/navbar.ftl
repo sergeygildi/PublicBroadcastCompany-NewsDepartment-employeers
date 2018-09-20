@@ -8,7 +8,6 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="/main">Главная<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Поиск</a>
-
         </div>
     </div>
 </nav>

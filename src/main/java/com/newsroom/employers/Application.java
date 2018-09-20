@@ -1,4 +1,4 @@
-package com.newsroom.employeers;
+package com.newsroom.employers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

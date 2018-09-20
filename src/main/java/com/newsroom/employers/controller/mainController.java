@@ -1,7 +1,9 @@
-package com.newsroom.employeers.controller;
+package com.newsroom.employers.controller;
 
-import com.newsroom.employeers.domains.Employee;
-import com.newsroom.employeers.myRepository.EmployRepo;
+import com.newsroom.employers.domains.Editor;
+import com.newsroom.employers.domains.Journalist;
+import com.newsroom.employers.repository.EditorRepo;
+import com.newsroom.employers.repository.JournalRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,14 +16,18 @@ import java.util.Map;
 public class mainController {
 
   @Autowired
-  private EmployRepo employRepo;
+  private JournalRepo journalRepo;
+  @Autowired
+  private EditorRepo editorRepo;
 
   @GetMapping("/main")
   public String greeting(Map<String, Object> model) {
 
-    Iterable<Employee> employers = employRepo.findAll();
-    model.put("employers", employers);
-//    model.remove("employDelete", employDel);
+    Iterable<Editor> editors = editorRepo.findAll();
+    model.put("editors", editors);
+
+    Iterable<Journalist> journalists = journalRepo.findAll();
+    model.put("journalists", journalists);
 
     return "HelloPage";
   }
@@ -35,11 +41,11 @@ public class mainController {
           Map<String, Object> model
   ) {
 
-    Employee employer = new Employee(employerName, email, phone, homeAddress);
-    employRepo.save(employer);
+    Editor editor = new Editor(employerName, email, phone, homeAddress);
+    editorRepo.save(editor);
 
-    Iterable<Employee> employers = employRepo.findAll();
-    model.put("employers", employers);
+    Iterable<Editor> editors = editorRepo.findAll();
+    model.put("editors", editors);
 
     return "HelloPage";
   }

@@ -1,12 +1,10 @@
-package com.newsroom.employeers.domains;
+package com.newsroom.employers.domains;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Employee {
+@Table(name = "editor")
+public class Editor {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
@@ -16,16 +14,16 @@ public class Employee {
   private String phone;
   private String homeAddress;
 
-  public Employee() {
+  public Editor() {
   }
 
-  public Employee(String employeerName, String phone) {
-    this.employerName = employeerName;
+  public Editor(String employerName, String phone) {
+    this.employerName = employerName;
     this.phone = phone;
   }
 
-  public Employee(String employeerName, String email, String phone, String homeAddress) {
-    this.employerName = employeerName;
+  public Editor(String employerName, String email, String phone, String homeAddress) {
+    this.employerName = employerName;
     this.email = email;
     this.phone = phone;
     this.homeAddress = homeAddress;
