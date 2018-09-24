@@ -41,8 +41,8 @@ public class Journalist {
     return employerName;
   }
 
-  public void setEmployerName(String employeerName) {
-    this.employerName = employeerName;
+  public void setEmployerName(String employerName) {
+    this.employerName = employerName;
   }
 
   public String getEmail() {
