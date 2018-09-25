@@ -3,7 +3,7 @@ package com.newsroom.employers.domains;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "journalist")
+@Table(name = "journalistsTable")
 public class Journalist {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

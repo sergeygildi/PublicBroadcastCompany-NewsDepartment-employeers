@@ -3,7 +3,7 @@ package com.newsroom.employers.domains;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "editor")
+@Table(name = "editorTable")
 public class Editor {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

@@ -16,7 +16,7 @@
                     <h5 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
-                            Журналисты
+                            Редакторы
                         </button>
                     </h5>
                 </div>
@@ -57,55 +57,6 @@
                             </tbody>
                             </#list>
                         </table>
-                    </div>
-                </div>
-            </div>
-        <#--Вторая вкладка-->
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Редакторы
-                        </button>
-                    </h5>
-                </div>
-            <#--Внутренности-->
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                    <#--таблица с данными-->
-                        <table class="table table-hover table-bordered" style="width: 1070px;">
-                            <thead>
-                            <tr class="container">
-                                <th scope="col">#</th>
-                                <th scope="col">Ф.И.О.</th>
-                                <th scope="col">Номер телефона</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Адрес для развозки</th>
-                            </tr>
-                            </thead>
-                            <#list journalists as jornalist>
-                            <tbody>
-                            <tr>
-
-                                <th scope="row">${jornalist.id}</th>
-                                <td>${jornalist.employerName}</td>
-                                <td>${jornalist.phone}</td>
-                                <td>${jornalist.email}</td>
-                                <td>${jornalist.homeAddress}</td>
-                                <td>
-                                    <form method="post">
-                                        <button type="button" class="close" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </form>
-                                </td>
-
-                            </tr>
-                            </tbody>
-                            </#list>
-                        </table>
-
                     </div>
                 </div>
             </div>

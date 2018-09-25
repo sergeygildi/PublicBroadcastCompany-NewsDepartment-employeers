@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link active" href="/main">Главная<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Поиск</a>
+            <a class="nav-item nav-link" href="/list_of_journalists">Журналисты</a>
         </div>
         <div>
             <!-- Example single danger button -->

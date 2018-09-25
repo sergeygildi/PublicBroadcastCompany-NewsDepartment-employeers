@@ -1,9 +1,7 @@
 package com.newsroom.employers.controller;
 
 import com.newsroom.employers.domains.Editor;
-import com.newsroom.employers.domains.Journalist;
 import com.newsroom.employers.repository.EditorRepo;
-import com.newsroom.employers.repository.JournalRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +14,6 @@ import java.util.Map;
 public class mainController {
 
   @Autowired
-  private JournalRepo journalRepo;
-  @Autowired
   private EditorRepo editorRepo;
 
   @GetMapping("/main")
@@ -25,9 +21,6 @@ public class mainController {
 
     Iterable<Editor> editors = editorRepo.findAll();
     model.put("editors", editors);
-
-    Iterable<Journalist> journalists = journalRepo.findAll();
-    model.put("journalists", journalists);
 
     return "HelloPage";
   }
