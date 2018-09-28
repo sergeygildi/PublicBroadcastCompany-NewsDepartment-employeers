@@ -37,6 +37,7 @@ public class mainController {
     Editor editor = new Editor(employerName, email, phone, homeAddress);
     editorRepo.save(editor);
 
+
     Iterable<Editor> editors = editorRepo.findAll();
     model.put("editors", editors);
 

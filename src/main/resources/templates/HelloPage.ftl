@@ -41,7 +41,7 @@
                             <tr>
 
                                 <th scope="row">${editor.id}</th>
-                                <td>${editor.employerName}</td>
+                                <td>${editor.journalistName}</td>
                                 <td>${editor.phone}</td>
                                 <td>${editor.email}</td>
                                 <td>${editor.homeAddress}</td>
@@ -77,7 +77,7 @@
                     <#---->
                         <div align="center">
                             <form method="post">
-                                <input type="text" class="form-control" name="employerName"
+                                <input type="text" class="form-control" name="journalistName"
                                        placeholder="Введите ФИО"/><br>
                                 <input type="text" class="form-control" name="phone"
                                        placeholder="Введите номер телефона"/><br>
@@ -101,7 +101,7 @@
 <#--<div class="card-body">-->
 <#--<div align="center">-->
 <#--<form method="post" >-->
-<#--<input type="text" class="form-control" name="employerName" placeholder="Введите ФИО" />-->
+<#--<input type="text" class="form-control" name="journalistName" placeholder="Введите ФИО" />-->
 <#--<br><br>-->
 <#--<input type="text" class="form-control" name="phone" placeholder="Введите номер телефона" />-->
 <#--<br><br>-->

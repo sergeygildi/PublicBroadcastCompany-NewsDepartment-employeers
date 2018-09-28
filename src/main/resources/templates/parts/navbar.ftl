@@ -22,7 +22,7 @@
                         <form method="post">
                             <div class="form-group">
                                 <label for="DropdownFormUsername">Имя Фамилия</label>
-                                <input type="text" name="employerName" class="form-control" id="DropdownFormUsername"
+                                <input type="text" name="journalistName" class="form-control" id="DropdownFormUsername"
                                        placeholder="Имя Фамилия">
                             </div>
                             <div class="form-group">

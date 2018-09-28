@@ -13,12 +13,24 @@
         <#--Первая вкладка-->
             <div class="card">
                 <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+
+                <#--TODO Разобраться с розмешением ссылки и поиска внутри блока: ссылка слева, поиск справа.
+
+                <#--Название таблицы-->
+                    <h5>
+                        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
                             Журналисты
                         </button>
                     </h5>
+
+                    <div>
+                    <#--Поиск-->
+                        <form method="get" action="/list_of_journalists">
+                            <input type="text" name="filter" value="${filter?ifExists}">
+                            <button type="submit">Найти</button>
+                        </form>
+                    </div>
                 </div>
             <#--Внутренности-->
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
@@ -30,10 +42,12 @@
                             <thead>
                             <tr class="container">
                                 <th scope="col">#</th>
-                                <th scope="col">Ф.И.О.</th>
-                                <th scope="col">Номер телефона</th>
+                                <th scope="col">Имя</th>
+                                <th scope="col">Фамилия</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Адрес для развозки</th>
+                                <th scope="col">Телефона</th>
+                                <th scope="col">Адрес</th>
+                                <th scope="col">Примечания</th>
                             </tr>
                             </thead>
                             <#list journalists as journalist>
@@ -41,16 +55,20 @@
                             <tr>
 
                                 <th scope="row">${journalist.id}</th>
-                                <td>${journalist.employerName}</td>
-                                <td>${journalist.phone}</td>
+                                <td>${journalist.journalistName}</td>
+                                <td>${journalist.journalistSurname}</td>
                                 <td>${journalist.email}</td>
+                                <td>${journalist.phone}</td>
                                 <td>${journalist.homeAddress}</td>
+                                <td class="table-warning">${journalist.designation}</td>
                                 <td>
-                                    <form method="post">
+                                    <form action="delete" method="post">
+                                        <input type="hidden" name="idJournalist" value="${journalist.id}">
                                         <button type="button" class="close" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </form>
+
                                 </td>
 
                             </tr>
@@ -77,13 +95,17 @@
                     <#---->
                         <div align="center">
                             <form method="post">
-                                <input type="text" class="form-control" name="employerName"
-                                       placeholder="Введите ФИО"/><br>
-                                <input type="text" class="form-control" name="phone"
-                                       placeholder="Введите номер телефона"/><br>
+                                <input type="text" class="form-control" name="journalistName"
+                                       placeholder="Имя"/><br>
+                                <input type="text" class="form-control" name="journalistSurname"
+                                       placeholder="Фамилия"/><br>
                                 <input type="text" class="form-control" name="email" placeholder="Введите email"/><br>
+                                <input type="text" class="form-control" name="phone"
+                                       placeholder="+38(0**) ***-**-**"/><br>
                                 <input type="text" class="form-control" name="homeAddress"
-                                       placeholder="Введите домашний адрес для развозки"/><br>
+                                       placeholder="ул.Светлицкого, 23"/><br>
+                                <input type="text" class="form-control" name="designation"
+                                       placeholder="Опытный, бывалый, стажер"/><br>
                                 <button class="container-fluid btn btn-primary" type="submit">Добавить</button>
                             </form>
                         </div>
