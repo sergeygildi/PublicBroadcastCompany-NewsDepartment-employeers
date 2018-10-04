@@ -14,30 +14,32 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
 
-                <#--TODO Разобраться с розмешением ссылки и поиска внутри блока: ссылка слева, поиск справа.
+                <#--TODO Checkout search form and text in one row: text on the left side, search form - on the right -->
 
-                <#--Название таблицы-->
-                    <h5>
-                        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                            Журналисты
-                        </button>
-                    </h5>
+                    <form class="form-row">
+                        <div class="form-col-ms-12" data-toggle="collapse" data-target="#collapseOne"
+                             aria-expanded="true" aria-controls="collapseOne">
+                            <h4>Журналисты</h4>
+                        </div>
 
-                    <div>
-                    <#--Поиск-->
-                        <form method="get" action="/list_of_journalists">
-                            <input type="text" name="filter" value="${filter?ifExists}">
-                            <button type="submit">Найти</button>
-                        </form>
-                    </div>
+                        <div class="form-col-ms-12">
+                        <#---->
+                            <form method="get" action="/list_of_journalists">
+                                <input type="text" class="form-control form-control-sm"
+                                       placeholder="Поиск: Введите фамилию"
+                                       name="filter" value="${filter?ifExists}"/>
+                            </form>
+                        <#---->
+                        </div>
+                    </form>
                 </div>
+
             <#--Внутренности-->
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                      data-parent="#accordionExample">
                     <div class="card-body">
 
-                    <#--таблица с данными-->
+                    <#--Таблица с данными о журналистах-->
                         <table class="table table-hover table-bordered" style="width: 1070px;">
                             <thead>
                             <tr class="container">
@@ -77,8 +79,10 @@
                         </table>
                     </div>
                 </div>
+            <#--Конец внутренностей первой вкладки-->
             </div>
-        <#--Третья вкладка-->
+        <#--Конец первой вкладки-->
+        <#--Вторая вкладка "Добавить сотрудника"-->
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h5 class="mb-0">
@@ -88,7 +92,7 @@
                         </button>
                     </h5>
                 </div>
-            <#--Внутренности-->
+            <#--Внутренности второй вкладки "Добавить сотрудника"-->
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                     <#--таблица с данными-->

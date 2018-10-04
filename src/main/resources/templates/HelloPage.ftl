@@ -37,24 +37,24 @@
                             </tr>
                             </thead>
                             <#list editors as editor>
-                            <tbody>
-                            <tr>
+                                <tbody>
+                                <tr>
 
-                                <th scope="row">${editor.id}</th>
-                                <td>${editor.journalistName}</td>
-                                <td>${editor.phone}</td>
-                                <td>${editor.email}</td>
-                                <td>${editor.homeAddress}</td>
-                                <td>
-                                    <form method="post">
-                                        <button type="button" class="close" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </form>
-                                </td>
+                                    <th scope="row">${editor.id}</th>
+                                    <td>${editor.journalistName}</td>
+                                    <td>${editor.phone}</td>
+                                    <td>${editor.email}</td>
+                                    <td>${editor.homeAddress}</td>
+                                    <td>
+                                        <form method="post">
+                                            <button type="button" class="close" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </form>
+                                    </td>
 
-                            </tr>
-                            </tbody>
+                                </tr>
+                                </tbody>
                             </#list>
                         </table>
                     </div>

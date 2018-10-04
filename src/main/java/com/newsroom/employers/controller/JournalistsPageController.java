@@ -11,6 +11,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
+/**
+ * TODO Realise JS Code "Add employee button";
+ * He must:
+ * make push-window "Add new employee";
+ * added new employee in the db table;
+ **/
+
+/** TODO Realise JS Code "Drop or delete from db line for id";
+ *  create img button "X", which when pressed - realizes delete from db line;
+ *  create pop-window "Are u sure want delete with employee?" 2 option-button "Yes/No";
+ **/
+
 @Controller
 public class JournalistsPageController {
 

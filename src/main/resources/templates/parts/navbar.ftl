@@ -9,45 +9,72 @@
             <a class="nav-item nav-link active" href="/main">Главная<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/list_of_journalists">Журналисты</a>
         </div>
+
         <div>
-            <!-- Example single danger button -->
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+
+        <#--TODO Create authorization
+            1. Make login button;
+            2. Create checkout. If user do authorization or registration - hide button and show text "Hello, username";
+            3. All of this at navigation bar;-->
+        <#--TODO Implement as JS code;
+            1. Rewrite "addEmplyer" code to JavaScript -->
+
+            <div>
+            <#--Кнопка "Добавить сотрудника"-->
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addEmployee">
                     Добавить сотрудника
                 </button>
-                <div class="dropdown-menu">
-                <#---->
-                    <form class="px-4 py-3">
-                        <form method="post">
-                            <div class="form-group">
-                                <label for="DropdownFormUsername">Имя Фамилия</label>
-                                <input type="text" name="journalistName" class="form-control" id="DropdownFormUsername"
-                                       placeholder="Имя Фамилия">
+            <#--Конец кнопки-->
+
+            <#--Код всплывающего окна с полями для ввода-->
+                <div id="addEmployee" class="modal fade" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Добавить сотрудника</h4>
+                                <button class="close" data-dismiss="modal">x</button>
+                                <br>
+                            <#--<p>Заполните обязательные поля ниже и нажмите на кнопку "Добавить"</p>-->
                             </div>
-                            <div class="form-group">
-                                <label for="DropdownFormEmail">Email</label>
-                                <input type="text" name="email" class="form-control" id="DropdownFormEmail"
-                                       placeholder="email@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="DropdownFormPhoneNumber">Телефон</label>
-                                <input type="text" name="phone" class="form-control" id="DropdownFormPhoneNumber"
-                                       placeholder="+38(0**)**-**-***">
-                            </div>
-                            <div class="form-group">
-                                <label for="DropdownFormHomeAddress">Адрес</label>
-                                <input type="text" class="form-control" name="homeAddress" id="DropdownFormHomeAddress"
-                                       placeholder="Киев, ул.Смирнова, 3">
-                            </div>
-                            <br>
-                            <button class="container-fluid btn btn-primary" type="submit">Добавить</button>
-                        </form>
-                    </form>
+
+                        <#--Начало тела всплывающего окна-->
+                            <form method="post">
+                                <div class="modal-body">
+
+                                    <input type="text" class="form-control" name="journalistName"
+                                           placeholder="Введите имя"/><br>
+                                    <input type="text" class="form-control" name="journalistSurname"
+                                           placeholder="Введите фамилию"/><br>
+                                    <input type="email" class="form-control" name="email"
+                                           placeholder="Введите email"/><br>
+                                    <input type="text" class="form-control" name="phone"
+                                           placeholder="Введите номер телефона в формате: +38(0**) ***-**-**"/><br>
+
+                                    <textarea type="text" class="form-control" name="homeAddress" rows="2"
+                                              placeholder="Киев, ул.Светлицкого, 23"></textarea><br>
+
+                                    <select class="form-control" name="designation" id="selectSkillsLevel">
+                                        <option selected>Уровень подготовки ...</option>
+                                        <option>Начальный</option>
+                                        <option>Средний</option>
+                                        <option>Продвинутый</option>
+                                    </select>
+                                </div>
+                            <#--Конец тела всплывающего окна-->
+
+                                <div class="modal-footer">
+                                    <button class="container-fluid btn btn-primary" type="submit">Добавить</button>
+                                    <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            <#---->
+            <#--Конец кода всплывающего окна с полями для ввода-->
+
             </div>
         </div>
+
     </div>
     </div>
 </nav>

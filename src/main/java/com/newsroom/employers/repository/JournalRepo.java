@@ -8,4 +8,3 @@ import java.util.List;
 public interface JournalRepo extends JpaRepository<Journalist, Long> {
   List<Journalist> findByJournalistSurname(String journalistSurname);
 }
-
