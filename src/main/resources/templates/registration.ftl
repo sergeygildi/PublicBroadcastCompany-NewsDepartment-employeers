@@ -1,9 +1,8 @@
-<#--<#import "parts/common.ftl" as c>-->
-<#--<#import "parts/login.ftl" as l>-->
-<#--<@c.page>-->
-<#--Add new user-->
+<#import "parts/common.ftl" as c>
+<#import "parts/login.ftl" as l>
+<@c.page>
 
-    <#--${message?ifExists}-->
+    ${message?ifExists}
 
-    <#--<@l.login "/registrarion" />-->
-<#--</@c.page>-->
+    <@l.login "/registrarion" />
+</@c.page>

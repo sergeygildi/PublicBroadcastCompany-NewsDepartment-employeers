@@ -9,7 +9,7 @@
             <a class="nav-item nav-link active" href="/main">Главная<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/list_of_journalists">Журналисты</a>
         </div>
-            <#--<@l.logout/>-->
+            <@l.logout/>
         <div>
 
         <#--TODO Create authorization

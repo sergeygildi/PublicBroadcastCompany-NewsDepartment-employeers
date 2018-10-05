@@ -6,8 +6,6 @@
 <#--тень на слое-->
     <div class="shadow-sm p-3 mb-5 bg-white rounded"><h3>Список сотрудников</h3></div>
 </div>
-<br>
-    <#--<@l.login "/login" />-->
 <br><br>
 <#--Блок 3 формы разъездные + таблицы-->
 
