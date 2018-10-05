@@ -1,6 +1,7 @@
 <#import "parts/common.ftl" as c>
-
+<#import "parts/login.ftl" as l>
 <@c.page>
+        <@l.logout/>
 <div class="row justify-content-md-center">
 <#--тень на слое-->
     <div class="shadow-sm p-3 mb-5 bg-white rounded"><h3>Список сотрудников</h3></div>
