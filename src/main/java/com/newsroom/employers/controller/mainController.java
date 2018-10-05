@@ -16,16 +16,21 @@ public class mainController {
   @Autowired
   private EditorRepo editorRepo;
 
-  @GetMapping("/main")
+  @GetMapping("/")
   public String greeting(Map<String, Object> model) {
+    return "redirect:/main";
+  }
+
+  @GetMapping("/main")
+  public String editorsList(Map<String, Object> model) {
 
     Iterable<Editor> editors = editorRepo.findAll();
     model.put("editors", editors);
 
-    return "HelloPage";
+    return "MainPage";
   }
 
-  @PostMapping
+  @PostMapping("filter")
   public String add(
           @RequestParam String employerName,
           @RequestParam String email,
@@ -41,7 +46,7 @@ public class mainController {
     Iterable<Editor> editors = editorRepo.findAll();
     model.put("editors", editors);
 
-    return "HelloPage";
+    return "MainPage";
   }
 
 }

@@ -9,7 +9,7 @@
             <a class="nav-item nav-link active" href="/main">Главная<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/list_of_journalists">Журналисты</a>
         </div>
-
+            <#--<@l.logout/>-->
         <div>
 
         <#--TODO Create authorization
@@ -63,6 +63,7 @@
                             <#--Конец тела всплывающего окна-->
 
                                 <div class="modal-footer">
+                                    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                                     <button class="container-fluid btn btn-primary" type="submit">Добавить</button>
                                     <button class="btn btn-danger" data-dismiss="modal">Закрыть</button>
                                 </div>

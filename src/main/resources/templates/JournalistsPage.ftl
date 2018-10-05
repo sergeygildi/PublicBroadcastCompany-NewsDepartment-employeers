@@ -1,5 +1,5 @@
 <#import "parts/common.ftl" as c>
-
+<#import "parts/login.ftl" as l>
 <@c.page>
 <div class="row justify-content-md-center">
 <#--тень на слое-->
@@ -28,6 +28,7 @@
                                 <input type="text" class="form-control form-control-sm"
                                        placeholder="Поиск: Введите фамилию"
                                        name="filter" value="${filter?ifExists}"/>
+                                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                             </form>
                         <#---->
                         </div>
@@ -110,6 +111,7 @@
                                        placeholder="ул.Светлицкого, 23"/><br>
                                 <input type="text" class="form-control" name="designation"
                                        placeholder="Опытный, бывалый, стажер"/><br>
+                                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                                 <button class="container-fluid btn btn-primary" type="submit">Добавить</button>
                             </form>
                         </div>
