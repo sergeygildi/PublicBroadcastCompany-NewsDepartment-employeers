@@ -1,25 +1,27 @@
 <#import "login.ftl" as l>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/main">UA:НОВИНИ</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <a class="navbar-brand" href="/main"><strong>UA:ПЕРШИЙ</strong></a>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link active" href="/main">Главная<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/list_of_journalists">Журналисты</a>
+            <a class="nav-item nav-link" href="/user">Пользователи</a>
         </div>
-        <@l.logout/>
-        <div>
 
+        <div class="navbar-nav ml-auto">
+        <@l.logout/>
         <#--TODO Create authorization
             1. Make login button;
             2. Create checkout. If user do authorization or registration - hide button and show text "Hello, username";
             3. All of this at navigation bar;-->
-        <#--TODO Implement as JS code;
-            1. Rewrite "addEmplyer" code to JavaScript -->
+        <#--TODO Implement as JS code
+            1. Rewrite "addEmployer" code to JavaScript -->
 
             <div>
             <#--Кнопка "Добавить сотрудника"-->
@@ -74,8 +76,29 @@
                     </div>
                 </div>
             <#--Конец кода всплывающего окна с полями для ввода-->
-
             </div>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <img src="//account_logo.png"/>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <form action="/logout" method="post">
+                                <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                                <a class="dropdown-item">Выйти</a>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
     </div>

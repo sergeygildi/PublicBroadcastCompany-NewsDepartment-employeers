@@ -25,10 +25,10 @@
                         <div class="form-col-ms-12">
                         <#---->
                             <form method="get" action="/list_of_journalists">
+                                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                                 <input type="text" class="form-control form-control-sm"
                                        placeholder="Поиск: Введите фамилию"
-                                       name="filter" value="${filter?ifExists}"/>
-                                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                                name="filter" value="${filter?ifExists}"/>
                             </form>
                         <#---->
                         </div>
@@ -43,7 +43,7 @@
                     <#--Таблица с данными о журналистах-->
                         <table class="table table-hover table-bordered" style="width: 1070px;">
                             <thead>
-                            <tr class="container">
+                            <tr class="container table-active">
                                 <th scope="col">#</th>
                                 <th scope="col">Имя</th>
                                 <th scope="col">Фамилия</th>
@@ -66,7 +66,6 @@
                                 <td class="table-warning">${journalist.designation}</td>
                                 <td>
                                     <form action="delete" method="post">
-                                        <input type="hidden" name="idJournalist" value="${journalist.id}">
                                         <button type="button" class="close" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -99,17 +98,18 @@
                     <#--таблица с данными-->
                     <#---->
                         <div align="center">
-                            <form method="post">
+                            <form method="post" action="/list_of_journalists">
                                 <input type="text" class="form-control" name="journalistName"
                                        placeholder="Имя"/><br>
                                 <input type="text" class="form-control" name="journalistSurname"
                                        placeholder="Фамилия"/><br>
-                                <input type="text" class="form-control" name="email" placeholder="Введите email"/><br>
-                                <input type="text" class="form-control" name="phone"
+                                <input type="text" class="form-control" name="journalistEmail"
+                                       placeholder="Введите email"/><br>
+                                <input type="text" class="form-control" name="journalistPhone"
                                        placeholder="+38(0**) ***-**-**"/><br>
-                                <input type="text" class="form-control" name="homeAddress"
+                                <input type="text" class="form-control" name="journalistHomeAddress"
                                        placeholder="ул.Светлицкого, 23"/><br>
-                                <input type="text" class="form-control" name="designation"
+                                <input type="text" class="form-control" name="journalistDesignation"
                                        placeholder="Опытный, бывалый, стажер"/><br>
                                 <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                                 <button class="container-fluid btn btn-primary" type="submit">Добавить</button>

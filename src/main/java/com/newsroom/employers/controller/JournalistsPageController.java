@@ -62,7 +62,7 @@ public class JournalistsPageController {
   ) {
 
     Journalist journalist = new Journalist(journalistName, journalistSurname, email, phone, homeAddress, designation);
-    journalRepo.save(journalist);
+    journalRepo.saveAndFlush(journalist);
 
 
     Iterable<Journalist> journalists = journalRepo.findAll();
