@@ -1,3 +1,5 @@
+<#import "login.ftl" as l>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/main">UA:НОВИНИ</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -9,7 +11,7 @@
             <a class="nav-item nav-link active" href="/main">Главная<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/list_of_journalists">Журналисты</a>
         </div>
-            <@l.logout/>
+        <@l.logout/>
         <div>
 
         <#--TODO Create authorization
