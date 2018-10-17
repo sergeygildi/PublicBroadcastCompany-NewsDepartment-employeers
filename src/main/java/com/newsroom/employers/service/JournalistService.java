@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface JournalistService {
 
-  Journalist addBank(Journalist journalist);
+  Journalist addUser(Journalist journalist);
 
   void delete(long id);
 
@@ -17,5 +17,4 @@ public interface JournalistService {
   Journalist editBank(Journalist journalist);
 
   List<Journalist> getAll();
-
 }

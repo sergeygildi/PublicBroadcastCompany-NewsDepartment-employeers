@@ -2,6 +2,8 @@ package com.newsroom.employers.controller;
 
 import com.newsroom.employers.domains.Journalist;
 import com.newsroom.employers.repository.JournalRepo;
+import com.newsroom.employers.service.JournalistService;
+import com.newsroom.employers.service.impl.JournalistServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +29,7 @@ import java.util.Map;
 public class JournalistsPageController {
 
   @Autowired
-  private JournalRepo journalRepo;
+  private JournalistServiceImpl journalistServiceimpl;
 
   @GetMapping("/list_of_journalists")
   public String greeting(
@@ -35,12 +37,12 @@ public class JournalistsPageController {
           Model modelNew,
           Map<String, Object> model) {
 
-    Iterable<Journalist> journalists = journalRepo.findAll();
+    Iterable<Journalist> journalists = journalistServiceimpl.getAll();
 
     if (filter != null && !filter.isEmpty()) {
-      journalists = journalRepo.findByJournalistSurname(filter);
+      journalists = journalistServiceimpl.journalRepo.findByJournalistSurname(filter);
     } else {
-      journalists = journalRepo.findAll();
+      journalists = journalistServiceimpl.getAll();
     }
 
     modelNew.addAttribute("journalists", journalists);
@@ -62,13 +64,20 @@ public class JournalistsPageController {
   ) {
 
     Journalist journalist = new Journalist(journalistName, journalistSurname, email, phone, homeAddress, designation);
-    journalRepo.saveAndFlush(journalist);
+    journalistServiceimpl.addUser(journalist);
 
 
-    Iterable<Journalist> journalists = journalRepo.findAll();
+    Iterable<Journalist> journalists = journalistServiceimpl.getAll();
     model.put("journalists", journalists);
 
     return "JournalistsPage";
   }
 
+  public JournalistServiceImpl getJournalistServiceimpl() {
+    return journalistServiceimpl;
+  }
+
+  public void setJournalistServiceimpl(JournalistServiceImpl journalistServiceimpl) {
+    this.journalistServiceimpl = journalistServiceimpl;
+  }
 }

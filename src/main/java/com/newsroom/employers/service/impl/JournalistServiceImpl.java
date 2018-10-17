@@ -4,16 +4,18 @@ import com.newsroom.employers.domains.Journalist;
 import com.newsroom.employers.repository.JournalRepo;
 import com.newsroom.employers.service.JournalistService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class JournalistServiceImpl implements JournalistService {
 
   @Autowired
-  private JournalRepo journalRepo;
+  public JournalRepo journalRepo;
 
   @Override
-  public Journalist addBank(Journalist journalist) {
+  public Journalist addUser(Journalist journalist) {
     Journalist savedJournalist = journalRepo.saveAndFlush(journalist);
     return savedJournalist;
   }

@@ -64,14 +64,14 @@
                                 <td>${journalist.phone}</td>
                                 <td>${journalist.homeAddress}</td>
                                 <td class="table-warning">${journalist.designation}</td>
-                                <td>
-                                    <form action="delete" method="post">
-                                        <button type="button" class="close" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </form>
+                                <#--<td>-->
+                                    <#--<form method="post">-->
+                                        <#--<button type="button" class="close" aria-label="Close">-->
+                                            <#--<span aria-hidden="true" name="remove">&times;</span>-->
+                                        <#--</button>-->
+                                    <#--</form>-->
 
-                                </td>
+                                <#--</td>-->
 
                             </tr>
                             </tbody>
